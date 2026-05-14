@@ -5,6 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/mohit_shop/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MohitCart</title>
+    <script>
+      (function() {
+        var p = window.location.search.match(/[?&]p=([^&]*)/);
+        if (p) {
+          window.history.replaceState(null, null,
+            decodeURIComponent(p[1]) +
+            (window.location.search.match(/[?&]q=([^&]*)/) ? '?' + decodeURIComponent(window.location.search.match(/[?&]q=([^&]*)/)[1]) : '') +
+            window.location.hash
+          );
+        }
+      })();
+    </script>
     <script type="module" crossorigin src="/mohit_shop/assets/index-D0jB1zl1.js"></script>
     <link rel="stylesheet" crossorigin href="/mohit_shop/assets/index-JSWOlRjt.css">
   </head>
